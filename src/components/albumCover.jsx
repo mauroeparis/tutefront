@@ -1,10 +1,8 @@
 import React from 'react';
 
-import { ReactComponent as Plus } from '../icons/plus.svg';
-
 function AlbumCover(props) {
   return (
-    <div className="max-w-xs p-2">
+    <div className="max-w-xs p-2 self-center">
       <div className="flex flex-row rounded-lg">
         <div className="group relative w-full h-full shadow-md rounded-lg cursor-pointer">
           <img

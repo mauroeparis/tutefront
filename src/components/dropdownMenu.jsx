@@ -22,7 +22,7 @@ function DropdownMenu() {
 
       <div
         className={`
-          mt-2 absolute right-0 text-left
+          mt-2 absolute right-0 text-left z-10
           ${isActive ? '' : 'hidden'}`}
       >
         <div className="w-64 bg-gray-100 rounded-lg shadow-lg">

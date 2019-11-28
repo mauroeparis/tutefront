@@ -20,8 +20,8 @@ function Home() {
   if (!covers) return <i>...</i>;
 
   return (
-    <div>
-      <div className="md:flex md:flex-row">
+    <div className="flex flex-col">
+      <div className="flex flex-col sm:flex-col md:flex-row self-center">
         {
           Object.values(covers).map(cover => (
             <AlbumCover
@@ -33,29 +33,46 @@ function Home() {
           ))
         }
       </div>
-      <div className="flex flex-col w-full justify-center text-gray-900">
-        <h1 className="font-raleway text-3xl font-thin uppercase text-center pt-16 pb-10">
-          Sobre Mí
-        </h1>
-        <div className="flex justify-center pb-6">
-          <img
-            src="https://instagram.fcor5-1.fna.fbcdn.net/vp/42ba05d4ae677b4e2299d61d3784e76d/5E8377CC/t51.2885-19/s150x150/77119430_517993535420467_8093270114398371840_n.jpg?_nc_ht=instagram.fcor5-1.fna.fbcdn.net"
-            className="rounded-full" alt="Mateo"
-            />
+      <div className="flex flex-col w-full justify-center bg-blue-100 mt-8">
+        <div className="max-w-5xl self-center">
+          <h1
+            className="
+              text-3xl font-raleway uppercase
+              text-left pt-4 pb-6 self-center
+              text-blue-800 text-center
+            "
+          >
+            Sobre Mí
+          </h1>
+          <div className="flex justify-center pb-6 flex-col md:flex-row">
+            <div className="self-center pb-6">
+              <img
+                className="object-cover rounded-full h-40 w-40 md:mr-6" alt="Mateo"
+                src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/02430f6d-af4e-45d1-9a86-bd4dd91db1f7/416cb9dc-d5a4-4bfb-a9dc-d30938854c31_rwc_0x22x4015x5989x4096.jpg?h=a88666c59b26eafbfc33d277d5a5002d"
+                />
+            </div>
+            <div className="relative">
+              <span className="absolute font-serif font-black text-6xl text-blue-800 left-0 top-0">❝</span>
+              <p
+                className="
+                text-center font-medium leading-relaxed
+                max-w-md self-center mx-10
+                "
+              >
+                Nací en Tinogasta en el año 1998.
+                Mi comienzo por la fotografía empezó
+                a los 12 años como un hobby.
+                Poco a poco me fui introduciendo en
+                el mundo de la fotografía y
+                llego un punto donde lo quise llevar a
+                algo mas profesional, que fue a mediados
+                del 2017. Desde ese momento es que estoy
+                trabajando como fotógrafo y estoy muy contento
+              </p>
+              <span className="absolute font-serif font-black text-6xl text-blue-800 right-0 bottom-0">❞</span>
+            </div>
+          </div>
         </div>
-        <p className="text-center font-medium leading-relaxed">
-          Lorem Ipsum is simply dummy text
-          of the printing and typesetting
-           industry. Lorem Ipsum has
-            been the industry's standard
-            dummy text ever since the 1500s,
-            when an unknown printer took a galley
-            of type and scrambled it to make
-            a type specimen book. It has survived
-            not only five centuries, but also the
-            leap into electronic typesetting,
-            remaining essentially unchanged.
-        </p>
       </div>
     </div>
   );
