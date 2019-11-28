@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 import { ReactComponent as Dots } from '../icons/dots.svg';
-import { ReactComponent as IdCard } from '../icons/idCard.svg';
 
 function DropdownMenu() {
   const [isActive, setIsActive] = useState(false);
@@ -18,7 +17,7 @@ function DropdownMenu() {
       <div
         className={`fixed inset-0 ${isActive ? '' : 'hidden'}`}
         onClick={() => setIsActive(!isActive)}
-        tabindex="-1">
+        tabIndex="-1">
       </div>
 
       <div

@@ -1,10 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
+import axios from 'axios';
 
 import AlbumCover from './components/albumCover';
 import DropdownMenu from './components/dropdownMenu';
 import { ReactComponent as InstaLogo } from './icons/instagram.svg';
 
 function App() {
+  const [covers, setCovers] = useState();
+
+  useEffect(() => {
+    const getCovers = async () => {
+      const result = await await axios(
+      'http://localhost:5000/',
+    );
+      setCovers(JSON.parse(result.request.response));
+    };
+    getCovers();
+  });
+
+  if (!covers) return <i>Loading Resource List...</i>;
+
   return (
     <div className="App">
       <div>
@@ -14,8 +29,15 @@ function App() {
               Mateo Diaz.
             </div>
             <div>
-              <AlbumCover imgUrl="https://www.instagram.com/p/B25MzQYj-on/media" modelName="Camila Gorozo" date="21 feb. 2019" />
-              <AlbumCover imgUrl="https://www.instagram.com/p/B0PM7sVDNHR/media" modelName="Milagros Apellido" date="21 feb. 2019" />
+              {
+                Object.values(covers).map(cover => (
+                  <AlbumCover
+                    imgUrl={cover.cover_url}
+                    modelName={cover.model_name}
+                    date={cover.book_date}
+                  />
+                ))
+              }
             </div>
           </div>
           <div className="fixed top-0 right-0 pt-6 pr-1">
