@@ -5,6 +5,7 @@ import _ from 'lodash';
 
 import AlbumCover from './albumCover';
 import About from './about';
+import Contact from './contact';
 
 function Home(props) {
     const [covers, setCovers] = useState();
@@ -32,7 +33,7 @@ function Home(props) {
           w-full md:max-w-2xl lg:max-w-3xl xl:max-w-4xl
           md:mx-auto
           "
-          >
+        >
           <div className="w-3/4 md:w-7/12 md:-mb-24 lg:w-9/12 lg:-mb-64">
             {
               <AlbumCover
@@ -41,7 +42,7 @@ function Home(props) {
                 date={
                   moment(new Date(covers[0].book_date)).format('DD MMM. YYYY')
                 }
-                />
+              />
             }
           </div>
           <div
@@ -52,7 +53,7 @@ function Home(props) {
             self-end
             z-10
             "
-            >
+          >
             {
               <AlbumCover
                 imgUrl={covers[1].cover_url}
@@ -60,7 +61,7 @@ function Home(props) {
                 date={
                   moment(new Date(covers[1].book_date)).format('DD MMM. YYYY')
                 }
-                />
+              />
             }
           </div>
           <div
@@ -71,7 +72,7 @@ function Home(props) {
             md:ml-8
             z-20
             "
-            >
+          >
             {
               <AlbumCover
                 imgUrl={covers[2].cover_url}
@@ -79,7 +80,7 @@ function Home(props) {
                 date={
                   moment(new Date(covers[2].book_date)).format('DD MMM. YYYY')
                 }
-                />
+              />
             }
           </div>
 
@@ -91,7 +92,7 @@ function Home(props) {
             self-end
             z-20
             "
-            >
+          >
             {
               <About />
             }
@@ -112,11 +113,11 @@ function Home(props) {
             className="
             w-3/4 md:w-2/3 lg:w-1/2
             -mt-40 md:-mt-48
-            -mb-6 lg:-mb-1
+            sm:-mb-6 lg:-mb-1
             self-end
             z-10
             "
-            >
+          >
             {
               <AlbumCover
                 imgUrl={structures[1].structure_url}
@@ -129,21 +130,15 @@ function Home(props) {
           </div>
           <div
             className="
-            w-3/4 md:w-3/4 lg:w-7/12
-            -mt-24 md:-mt-64
+            w-full sm:w-3/4 md:w-3/4 lg:w-6/12
+            sm:-mt-24 md:-mt-64
             lg:-mb-32
             md:ml-8
             z-20
             "
-            >
+          >
             {
-              <AlbumCover
-                imgUrl={covers[2].cover_url}
-                modelName={covers[2].model_name}
-                date={
-                  moment(new Date(covers[2].book_date)).format('DD MMM. YYYY')
-                }
-              />
+              <Contact />
             }
           </div>
         </div>
