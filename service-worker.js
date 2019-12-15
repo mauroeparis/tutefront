@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/tutefront/precache-manifest.35c1540e98c344135cc5d2e78102cbbd.js"
+  "/tutefront/precache-manifest.d0767fe036806a17e0f05812f77347c2.js"
 );
 
 self.addEventListener('message', (event) => {
