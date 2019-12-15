@@ -14,7 +14,7 @@ function Home(props) {
     useEffect(() => {
       const getCovers = async () => {
         const result = await await axios(
-          'http://192.168.0.10:5000/',
+          'http://tuteback.tk',
         );
         setCovers(_.values(JSON.parse(result.request.response)['covers']));
         setStructures(_.values(JSON.parse(result.request.response)['structures']));

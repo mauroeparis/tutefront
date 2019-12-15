@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.19.0",
+    "gh-pages": "^2.1.1",
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
     "react": "^16.9.0",
@@ -11,6 +12,8 @@
     "react-scripts": "3.1.1"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "tailwind:css": "tailwind build src/css/tailwind.src.css -c tailwind.js -o src/css/tailwind.css",
     "start": "npm run tailwind:css && react-scripts start",
     "build": "npm run tailwind:css && react-scripts build",
@@ -34,5 +37,6 @@
   },
   "devDependencies": {
     "tailwindcss": "^1.1.2"
-  }
+  },
+  "homepage": "https://mauroeparis.github.io/tutefront"
 }
