@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/tutefront/static/css/main.db419c65.chunk.css",
+    "main.js": "/tutefront/static/js/main.284ef30f.chunk.js",
+    "main.js.map": "/tutefront/static/js/main.284ef30f.chunk.js.map",
+    "runtime~main.js": "/tutefront/static/js/runtime~main.3c46496b.js",
+    "runtime~main.js.map": "/tutefront/static/js/runtime~main.3c46496b.js.map",
+    "static/js/2.e95ac09e.chunk.js": "/tutefront/static/js/2.e95ac09e.chunk.js",
+    "static/js/2.e95ac09e.chunk.js.map": "/tutefront/static/js/2.e95ac09e.chunk.js.map",
+    "index.html": "/tutefront/index.html",
+    "precache-manifest.35c1540e98c344135cc5d2e78102cbbd.js": "/tutefront/precache-manifest.35c1540e98c344135cc5d2e78102cbbd.js",
+    "service-worker.js": "/tutefront/service-worker.js",
+    "static/css/main.db419c65.chunk.css.map": "/tutefront/static/css/main.db419c65.chunk.css.map",
+    "static/media/chat.b32635e1.svg": "/tutefront/static/media/chat.b32635e1.svg",
+    "static/media/dots.0186846f.svg": "/tutefront/static/media/dots.0186846f.svg",
+    "static/media/instagram.228c758c.svg": "/tutefront/static/media/instagram.228c758c.svg"
+  }
+}
