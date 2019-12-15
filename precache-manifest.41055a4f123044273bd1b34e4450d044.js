@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "69ea3d73d88acf0f333c1af16100e6dd",
+    "revision": "ea2e547d39375ad50bc1fc0499618fb5",
     "url": "/tutefront/index.html"
   },
   {
-    "revision": "76791486b0bbb38f9038",
+    "revision": "f08ecafc9492f7268d88",
     "url": "/tutefront/static/css/main.db419c65.chunk.css"
   },
   {
-    "revision": "9f1cc7a4dba53ec5ab1a",
-    "url": "/tutefront/static/js/2.e95ac09e.chunk.js"
+    "revision": "3bd577c07a6f8a1cd26c",
+    "url": "/tutefront/static/js/2.7c5b8809.chunk.js"
   },
   {
-    "revision": "76791486b0bbb38f9038",
-    "url": "/tutefront/static/js/main.2e2e98fd.chunk.js"
+    "revision": "f08ecafc9492f7268d88",
+    "url": "/tutefront/static/js/main.a4c15abc.chunk.js"
   },
   {
     "revision": "16e3ef3bf7f228a323cf",
