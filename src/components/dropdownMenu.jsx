@@ -11,7 +11,7 @@ function DropdownMenu() {
         onClick={() => setIsActive(!isActive)}
         className="cursor-pointer"
       >
-        <Dots className="px-3 h-6 w-8"/>
+        <Dots className="mt-1 px-3 h-6 w-8"/>
       </button>
 
       <div

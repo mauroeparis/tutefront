@@ -7,7 +7,7 @@ import Contact from './contact';
 function Home(props) {
 
     return (
-      <div className="flex flex-col">
+      <div className="flex flex-col pb-24 xl:pb-64">
         <div
           className="
           flex
@@ -20,8 +20,6 @@ function Home(props) {
             {
               <AlbumCover
                 imgUrl={"https://pro2-bar-s3-cdn-cf2.myportfolio.com/02430f6d-af4e-45d1-9a86-bd4dd91db1f7/3f9ceacb-f91d-476e-ab94-dc6d40459d9a_rw_1920.jpg?h=7e7157750370c2315a2e9caf3ebe92b8"}
-                modelName={""}
-                date={""}
               />
             }
           </div>
@@ -37,8 +35,6 @@ function Home(props) {
             {
               <AlbumCover
                 imgUrl={"https://pro2-bar-s3-cdn-cf2.myportfolio.com/02430f6d-af4e-45d1-9a86-bd4dd91db1f7/352b40f3-8539-40dc-aa48-f1d94a843434_rw_1920.jpg?h=8f5fa0c5f3c5a73752f09f5de8efeca6"}
-                modelName={""}
-                date={""}
               />
             }
           </div>
@@ -54,8 +50,6 @@ function Home(props) {
             {
               <AlbumCover
                 imgUrl={"https://pro2-bar-s3-cdn-cf4.myportfolio.com/02430f6d-af4e-45d1-9a86-bd4dd91db1f7/5db41ff2-4079-4b60-9060-62e9b318b916_rw_1920.jpg?h=af5ae9975fc93060c2255e7bc5fbfa8b"}
-                modelName={""}
-                date={""}
               />
             }
           </div>
@@ -78,8 +72,6 @@ function Home(props) {
             {
               <AlbumCover
                 imgUrl={"https://i.imgur.com/tmoMBuP.jpg"}
-                modelName={""}
-                date={""}
               />
             }
           </div>
@@ -95,8 +87,6 @@ function Home(props) {
             {
               <AlbumCover
                 imgUrl={"https://i.imgur.com/2Njwtjf.jpg"}
-                modelName={""}
-                date={""}
               />
             }
           </div>
