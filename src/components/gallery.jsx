@@ -1,25 +1,26 @@
 import React from 'react';
 
+import Book from './book';
+import BookCover from '../img/bookCover.png';
+
+
+
 function Gallery(props) {
   return (
-    <div className="w-full p-2 self-center">
-      <div className="flex flex-row rounded-lg">
-        <div
-          className="
-            group
-            relative
-            w-full
-            h-full
-            shadow-md
-            rounded-lg
-            cursor-pointer
-          "
-        >
-          <img
-           src={props.imgUrl}
-           className="w-full shadow-base rounded-lg" alt="album cover"
-          />
-        </div>
+    <div className="flex flex-col lg:px-24">
+      <h1
+        className="
+          font-thin tracking-widest uppercase font-raleway
+          text-3xl self-center text-gray-800 pb-12
+        "
+      >
+        Books
+      </h1>
+      <div className="flex flex-wrap justify-around">
+        <Book src={BookCover}/>
+        <Book src={BookCover}/>
+        <Book src={BookCover}/>
+        <Book src={BookCover}/>
       </div>
     </div>
   );
