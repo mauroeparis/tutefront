@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import DropdownMenu from './dropdownMenu';
 import { ReactComponent as InstaLogo } from '../icons/instagram.svg';
@@ -14,14 +15,15 @@ function Navbar() {
       <div
         className="w-4/5 self-center"
       >
-        <div
+        <Link
+          to="/"
           className="
             pl-2 py-2 text-xl font-medium
             tracking-wide uppercase font-raleway
           "
         >
           Mateo Diaz.
-        </div>
+        </Link>
 
       </div>
       <div className="flex flex-row bg-white py-2 pr-1">
