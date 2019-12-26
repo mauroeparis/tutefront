@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Book from './book';
+import GalleryFilter from './galleryFilter';
 import BookCover from '../img/bookCover.png';
 
 
@@ -16,11 +17,33 @@ function Gallery(props) {
       >
         Books
       </h1>
+      <div className="flex flex-wrap pb-1">
+        <GalleryFilter label="Retratos Femeninos" />
+        <GalleryFilter label="Retratos Masculinos" />
+        <GalleryFilter label="Estructuras" />
+      </div>
       <div className="flex flex-wrap justify-around">
-        <Book src={BookCover}/>
-        <Book src={BookCover}/>
-        <Book src={BookCover}/>
-        <Book src={BookCover}/>
+        <div className="my-3">
+          <Book src={BookCover}/>
+        </div>
+        <div className="my-3">
+          <Book src={BookCover}/>
+        </div>
+        <div className="my-3">
+          <Book src={BookCover}/>
+        </div>
+        <div className="my-3">
+          <Book src={BookCover}/>
+        </div>
+        <div className="my-3">
+          <Book src={BookCover}/>
+        </div>
+        <div className="my-3">
+          <Book src={BookCover}/>
+        </div>
+        <div className="my-3">
+          <Book src={BookCover}/>
+        </div>
       </div>
     </div>
   );
