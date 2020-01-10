@@ -7,24 +7,28 @@ import {
 
 import Home from './components/home';
 import Gallery from './components/gallery';
+import Book from './components/book';
 import Navbar from './components/navbar';
 
 function App() {
-  return (
-    <div className="App">
-      <Router>
-        <Navbar/>
 
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/gallery">
-            <Gallery />
-          </Route>
-        </Switch>
-      </Router>
-    </div>
+  return (
+      <div className="App">
+        <Router>
+          <Navbar />
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/gallery">
+              <Gallery />
+            </Route>
+            <Route path="/book">
+              <Book />
+            </Route>
+          </Switch>
+        </Router>
+      </div>
   );
 }
 

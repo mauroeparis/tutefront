@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
-import Book from './book';
+import BookCover from './bookCover';
 import GalleryFilter from './galleryFilter';
-import BookCover from '../img/bookCover.png';
+import BookCoverImg from '../img/bookCover.png';
 
 
 
@@ -23,27 +24,13 @@ function Gallery(props) {
         <GalleryFilter label="Estructuras" />
       </div>
       <div className="flex flex-wrap justify-around">
-        <div className="my-3">
-          <Book src={BookCover}/>
-        </div>
-        <div className="my-3">
-          <Book src={BookCover}/>
-        </div>
-        <div className="my-3">
-          <Book src={BookCover}/>
-        </div>
-        <div className="my-3">
-          <Book src={BookCover}/>
-        </div>
-        <div className="my-3">
-          <Book src={BookCover}/>
-        </div>
-        <div className="my-3">
-          <Book src={BookCover}/>
-        </div>
-        <div className="my-3">
-          <Book src={BookCover}/>
-        </div>
+        <Link to="book" className="my-3"><BookCover src={BookCoverImg}/></Link>
+        <Link to="book" className="my-3"><BookCover src={BookCoverImg}/></Link>
+        <Link to="book" className="my-3"><BookCover src={BookCoverImg}/></Link>
+        <Link to="book" className="my-3"><BookCover src={BookCoverImg}/></Link>
+        <Link to="book" className="my-3"><BookCover src={BookCoverImg}/></Link>
+        <Link to="book" className="my-3"><BookCover src={BookCoverImg}/></Link>
+        <Link to="book" className="my-3"><BookCover src={BookCoverImg}/></Link>
       </div>
     </div>
   );
