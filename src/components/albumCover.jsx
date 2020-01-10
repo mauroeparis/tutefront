@@ -12,7 +12,6 @@ function AlbumCover(props) {
             h-full
             shadow-md
             rounded-lg
-            cursor-pointer
           "
         >
           <img
