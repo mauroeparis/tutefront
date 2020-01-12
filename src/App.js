@@ -9,6 +9,7 @@ import Home from './components/home';
 import Gallery from './components/gallery';
 import Book from './components/book';
 import Navbar from './components/navbar';
+import Login from './components/login';
 
 function App() {
 
@@ -25,6 +26,9 @@ function App() {
             </Route>
             <Route path="/book">
               <Book />
+            </Route>
+            <Route path="/login">
+              <Login />
             </Route>
           </Switch>
         </Router>
