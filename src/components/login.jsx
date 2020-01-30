@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState, useContext } from 'react';
+import { useHistory } from "react-router-dom";
 
+import api from "../Api";
 import { ReactComponent as CameraIcon } from '../icons/camera.svg';
+import TokenContext from "../TokenContext";
 
 function Login(props) {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [error, setError] = useState(false);
+  const { tokenDispatch } = useContext(TokenContext);
+  const history = useHistory()
 
   const baseInputClases = `
     appearance-none
@@ -19,7 +23,7 @@ function Login(props) {
     focus:outline-none
     focus:bg-white
     focus:border-gray-500
-  `
+  `;
 
   const okInputClasses = `text-gray-700 border-gray-200`;
 
@@ -47,12 +51,14 @@ function Login(props) {
     if (event.key === "Enter") {
       handleLogin();
     }
-  }
+  };
 
   const handleLogin = () => {
-    axios.post(`http://127.0.0.1:5000/auth-token`, { email, password })
+    api.auth.login({ email, password })
     .then(res => {
       setError(false)
+      tokenDispatch({ type:"LOGIN", token:res.data.access_token });
+      history.push("/admin");
     }).catch(res => {
       setError(true);
     })

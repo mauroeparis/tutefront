@@ -1,17 +1,22 @@
-import React from "react";
+import React, {useReducer} from "react";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
 } from "react-router-dom";
 
-import Home from './components/home';
-import Gallery from './components/gallery';
+import TokenContext, { tokenReducer } from "./TokenContext";
 import Book from './components/book';
-import Navbar from './components/navbar';
+import Gallery from './components/gallery';
+import Home from './components/home';
 import Login from './components/login';
+import Navbar from './components/navbar';
 
 function App() {
+  const [token, tokenDispatch] = useReducer(
+      tokenReducer,
+      {token: localStorage.token}
+  );
 
   return (
       <div className="App">
@@ -21,15 +26,17 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
-            <Route path="/gallery">
-              <Gallery />
-            </Route>
-            <Route path="/book">
-              <Book />
-            </Route>
-            <Route path="/login">
-              <Login />
-            </Route>
+            <TokenContext.Provider value={{ token, tokenDispatch }}>
+              <Route path="/book/:id">
+                <Book />
+              </Route>
+              <Route path="/gallery">
+                <Gallery />
+              </Route>
+              <Route path="/login">
+                <Login />
+              </Route>
+            </TokenContext.Provider>
           </Switch>
         </Router>
       </div>

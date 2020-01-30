@@ -36,15 +36,16 @@ function About() {
             text-gray-800
             "
           >
-            Nací en Tinogasta en el año 1998.
-            Mi comienzo por la fotografía empezó
-            a los 12 años como un hobby.
-            Poco a poco me fui introduciendo en
-            el mundo de la fotografía y
-            llego un punto donde lo quise llevar a
-            algo mas profesional, que fue a mediados
-            del 2017. Desde ese momento es que estoy
-            trabajando como fotógrafo y estoy muy contento
+            Nací en Tinogasta, Catamarca en el año 1998 y
+            actualmente estoy viviendo en la ciudad
+            de Córdoba. Mi comienzo en el mundo de la
+            fotografía empezó a los 12 años como un hobby,
+            en el cual poco a poco me fui introduciendo.
+            A mediados del año 2017 decidí querer llevarlo a
+            algo más profesional. Desde ese momento me
+             encuentro trabajando como fotógrafo, por lo que
+             me siento muy contento y satisfecho tanto a
+             nivel profesional como personal.
           </p>
         </div>
       </div>

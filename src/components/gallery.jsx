@@ -1,13 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { Link } from "react-router-dom";
 
 import BookCover from './bookCover';
-import GalleryFilter from './galleryFilter';
-import BookCoverImg from '../img/bookCover.png';
+import AddBookModal from './addBookModal';
+import TokenContext from "../TokenContext";
+import { GalleryFilter, GalleryButton } from './galleryFilter';
+import api from '../Api';
 
 
+function Gallery() {
+  const [books, setBooks] = useState([]);
+  const [disabled, showModal] = useState(true);
+  const { token } = useContext(TokenContext);
 
-function Gallery(props) {
+  useEffect(() => {
+    api.books.all()
+    .then(res => {
+      setBooks(res.data.objects);
+    })
+  }, []);
+
   return (
     <div className="flex flex-col lg:px-24">
       <h1
@@ -18,20 +30,33 @@ function Gallery(props) {
       >
         Books
       </h1>
-      <div className="flex flex-wrap pb-1">
-        <GalleryFilter label="Retratos Femeninos" />
-        <GalleryFilter label="Retratos Masculinos" />
-        <GalleryFilter label="Estructuras" />
+      <div className="flex justify-between pb-1">
+        <div className="flex flex-wrap">
+          <GalleryFilter label="Retratos" />
+          <GalleryFilter label="Estructuras" />
+          <GalleryFilter label="Variadas" />
+        </div>
+        {token ? <div className="flex flex-wrap">
+          <GalleryButton label="agregar book" func={() => { showModal(false) }}/>
+        </div> : ""}
+
       </div>
-      <div className="flex flex-wrap justify-around">
-        <Link to="book" className="my-3"><BookCover src={BookCoverImg}/></Link>
-        <Link to="book" className="my-3"><BookCover src={BookCoverImg}/></Link>
-        <Link to="book" className="my-3"><BookCover src={BookCoverImg}/></Link>
-        <Link to="book" className="my-3"><BookCover src={BookCoverImg}/></Link>
-        <Link to="book" className="my-3"><BookCover src={BookCoverImg}/></Link>
-        <Link to="book" className="my-3"><BookCover src={BookCoverImg}/></Link>
-        <Link to="book" className="my-3"><BookCover src={BookCoverImg}/></Link>
+      <div className="flex flex-wrap">
+        {books.map((book) => {
+          return (
+            <div className="m-3" key={book.id}>
+              <Link to={`book/${book.id}`}>
+                <BookCover
+                  name={book.name}
+                  src={book.photos[0].url}
+                />
+              </Link>
+            </div>
+          )
+        })}
       </div>
+
+      <AddBookModal showModal={showModal} disabled={disabled} />
     </div>
   );
 }
