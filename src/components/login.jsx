@@ -58,7 +58,7 @@ function Login(props) {
     .then(res => {
       setError(false)
       tokenDispatch({ type:"LOGIN", token:res.data.access_token });
-      history.push("/admin");
+      history.push("/gallery");
     }).catch(res => {
       setError(true);
     })

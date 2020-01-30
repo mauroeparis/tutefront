@@ -8,7 +8,7 @@ import { ReactComponent as IconBook } from '../icons/book.svg';
 import TokenContext from "../TokenContext";
 import api from '../Api';
 
-function AddBookModal({ showModal, disabled, buttonClasses }) {
+function AddBookModal({ showModal, disabled, setBooks, books, buttonClasses }) {
   const { token } = useContext(TokenContext);
 
   const baseInputClasses = `
@@ -55,6 +55,7 @@ function AddBookModal({ showModal, disabled, buttonClasses }) {
       setUrls([""])
       setName("");
       setTag("portrait");
+      setBooks([books, res.data].flat())
     }).catch(
       res => console.log(res)
     );

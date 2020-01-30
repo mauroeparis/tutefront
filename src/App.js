@@ -20,25 +20,25 @@ function App() {
 
   return (
       <div className="App">
-        <Router>
-          <Navbar />
-          <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <TokenContext.Provider value={{ token, tokenDispatch }}>
-              <Route path="/book/:id">
-                <Book />
+        <TokenContext.Provider value={{ token, tokenDispatch }}>
+          <Router>
+            <Navbar />
+            <Switch>
+              <Route exact path="/">
+                <Home />
               </Route>
-              <Route path="/gallery">
-                <Gallery />
-              </Route>
-              <Route path="/login">
-                <Login />
-              </Route>
-            </TokenContext.Provider>
-          </Switch>
-        </Router>
+                <Route path="/book/:id">
+                  <Book />
+                </Route>
+                <Route path="/gallery">
+                  <Gallery />
+                </Route>
+                <Route path="/login">
+                  <Login />
+                </Route>
+            </Switch>
+          </Router>
+        </TokenContext.Provider>
       </div>
   );
 }

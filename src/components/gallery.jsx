@@ -36,7 +36,7 @@ function Gallery() {
           <GalleryFilter label="Estructuras" />
           <GalleryFilter label="Variadas" />
         </div>
-        {token ? <div className="flex flex-wrap">
+        {token.token ? <div className="flex flex-wrap">
           <GalleryButton label="agregar book" func={() => { showModal(false) }}/>
         </div> : ""}
 
@@ -56,7 +56,12 @@ function Gallery() {
         })}
       </div>
 
-      <AddBookModal showModal={showModal} disabled={disabled} />
+      <AddBookModal
+        showModal={showModal}
+        books={books}
+        setBooks={setBooks}
+        disabled={disabled}
+      />
     </div>
   );
 }

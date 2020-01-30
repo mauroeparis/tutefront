@@ -1,10 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from "react-router-dom";
 
 import { ReactComponent as Dots } from '../icons/dots.svg';
+import TokenContext from "../TokenContext";
 
 function DropdownMenu() {
   const [isActive, setIsActive] = useState(false);
+  const { token, tokenDispatch } = useContext(TokenContext);
+
+  const logout = () =>  {
+    tokenDispatch({ type:"LOGOUT" });
+    setIsActive(!isActive);
+  };
 
   return (
     <div className="relative inline-block">
@@ -37,13 +44,15 @@ function DropdownMenu() {
             >
               Ver Books
             </Link>
-            <Link
-              to="/gallery"
-              onClick={() => setIsActive(!isActive)}
-              className="block px-6 py-3 leading-tight hover:bg-gray-200"
-            >
-              Ver Estructuras
-            </Link>
+            {token.token ?
+              <button
+                onClick={() => logout()}
+                className="
+                  block w-full text-left px-6 py-3 leading-tight hover:bg-gray-200 rounded-t-lg
+                "
+              >
+                Logout
+              </button> : ""}
             <a
               href="#.com"
               onClick={() => setIsActive(!isActive)}
@@ -55,9 +64,7 @@ function DropdownMenu() {
               href="#.com"
               onClick={() => setIsActive(!isActive)}
               className="
-                block px-6 py-3 leading-tight
-                bg-blue-200 hover:bg-blue-300
-                text-blue-700 hover:text-blue-800
+                block px-6 py-3 leading-tight hover:bg-gray-200
                 rounded-b-lg"
             >
               <div className="flex flex-row items-center">
