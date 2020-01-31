@@ -1,16 +1,13 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 
 import { ReactComponent as IconCross } from '../icons/cross.svg';
 import { ReactComponent as IconPlus } from '../icons/plus.svg';
 import { ReactComponent as IconLink } from '../icons/link.svg';
 import { ReactComponent as IconCaretDown } from '../icons/caret-down.svg';
 import { ReactComponent as IconBook } from '../icons/book.svg';
-import TokenContext from "../TokenContext";
 import api from '../Api';
 
 function AddBookModal({ showModal, disabled, setBooks, books, buttonClasses }) {
-  const { token } = useContext(TokenContext);
-
   const baseInputClasses = `
     appearance-none
     text-gray-700 border-gray-200
