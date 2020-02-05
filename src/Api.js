@@ -19,6 +19,7 @@ const books = {
   all: () => API.get("api/books"),
   get: (id) => API.get(`api/books/${id}`),
   add: (data) => API.post("api/books", data),
+  put: (id, data) => API.put(`api/books/put/${id}`, data),
   delMul: (idList, token) => API.post(
     "api/books/delete",
     {books: idList},

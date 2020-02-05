@@ -1,6 +1,10 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import { useParams } from "react-router-dom";
 
+import { ReactComponent as PencilLogo } from '../icons/pencil.svg';
+import TokenContext from "../TokenContext";
+import AddBookModal from './addBookModal';
+import { GalleryButton } from './galleryFilter';
 import ImgModal from './imgModal';
 import api from '../Api';
 
@@ -13,9 +17,12 @@ function Book() {
     index: null
   });
 
+  const [hidden, showAddBookModal] = useState(true);
   const { id } = useParams();
-  const [images, setImages] = useState([])
+  const [images, setImages] = useState([""])
   const [modelName, setModelName] = useState()
+  const { token } = useContext(TokenContext);
+
 
   useEffect(() => {
     api.books.get(id)
@@ -37,6 +44,12 @@ function Book() {
       >
         {modelName || ""}
       </h1>
+      {token.token ? <div className="flex flex-wrap justify-center pb-3">
+        <GalleryButton
+          label={<PencilLogo className="w-6 h-6" />}
+          func={() => { showAddBookModal(false) }}
+        />
+      </div> : ""}
       <div className="flex flex-wrap self-center w-8/12 pb-24 justify-center">
         {images.map((src, key) => {
           return (
@@ -57,9 +70,20 @@ function Book() {
         })}
       </div>
 
-      <ImgModal showModal={showModal} disabled={disabled} index={index} images={images} />
+      <ImgModal
+        showModal={showModal}
+        disabled={disabled}
+        index={index}
+        images={images}
+      />
+      <AddBookModal
+        id={id}
+        modelName={modelName}
+        images={images}
+        showModal={showAddBookModal}
+        disabled={hidden}
+      />
     </div>
-
   );
 }
 

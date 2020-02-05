@@ -59,6 +59,7 @@ function Login(props) {
       setError(false)
       tokenDispatch({ type:"LOGIN", token:res.data.access_token });
       history.push("/gallery");
+      window.location.reload();
     }).catch(res => {
       setError(true);
     })

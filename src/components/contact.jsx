@@ -1,5 +1,9 @@
 import React from "react";
+
 import { ReactComponent as ChatIcon } from '../icons/chat.svg';
+import { ReactComponent as InstaLogo } from '../icons/instagram.svg';
+import { ReactComponent as WppLogo } from '../icons/whatsapp.svg';
+
 
 function About() {
   return (
@@ -53,115 +57,48 @@ function About() {
             Estemos en contacto
           </h1>
           <div className="w-full mt-3">
-            <input
-              className="
-              appearance-none
-              block
-              w-full
-              bg-gray-200
-              text-gray-700
-              border
-              border-gray-200
-              rounded
-              py-3
-              px-4
-              leading-tight
-              focus:outline-none
-              focus:bg-white
-              focus:border-gray-500
-              "
-              type="text"
-              placeholder="Nombre"
-              />
-          </div>
-          <div className="w-full mt-3">
-            <input
-              className="
-              appearance-none
-              block
-              w-full
-              bg-gray-200
-              text-gray-700
-              border
-              border-gray-200
-              rounded
-              py-3
-              px-4
-              leading-tight
-              focus:outline-none
-              focus:bg-white
-              focus:border-gray-500
-              "
-              type="text"
-              placeholder="Teléfono"
-              />
-          </div>
-          <div className="w-full mt-3">
-            <input
-              className="
-              appearance-none
-              block
-              w-full
-              bg-gray-200
-              text-gray-700
-              border
-              border-gray-200
-              rounded
-              py-3
-              px-4
-              leading-tight
-              focus:outline-none
-              focus:bg-white
-              focus:border-gray-500
-              "
-              type="email"
-              placeholder="E-mail"
-              />
-          </div>
-          <div className="w-full mt-3">
-            <textarea
-              className="
-              appearance-none
-              block
-              w-full
-              bg-gray-200
-              text-gray-700
-              border
-              border-gray-200
-              rounded
-              py-3
-              px-4
-              leading-tight
-              focus:outline-none
-              focus:bg-white
-              focus:border-gray-500
-              "
-              placeholder="Hola Mateo! ..."
-              rows="4"
-            />
-          </div>
-          <div className="w-full mt-3">
-            <button
+            <a
+              href="https://www.instagram.com/matuteph/"
               className="
                 appearance-none
-                block
-                w-full
+                flex justify-center
+                w-full py-3 px-4
                 bg-blue-200
-                text-blue-800
-                border
-                border-blue-200
-                rounded
-                py-3
-                px-4
-                leading-tight
+                text-blue-800 leading-tight
+                border border-blue-200 rounded
                 focus:outline-none
                 hover:bg-blue-300
                 hover:text-blue-900
                 focus:border-blue-500
               "
             >
-              Enviar
-            </button>
+              <InstaLogo className="px-3 h-12 w-16"/>
+              <p className="self-center font-semibold">
+                MATUTEPH
+              </p>
+            </a>
+          </div>
+          <div className="w-full mt-3">
+            <a
+              href="https://api.whatsapp.com/send?phone=+5493512016383"
+              className="
+                appearance-none
+                flex justify-center
+                w-full py-3 px-4
+                bg-green-200
+                text-green-800 leading-tight
+                border border-blue-200 rounded
+                focus:outline-none
+                hover:bg-green-300
+                hover:text-green-900
+                focus:border-green-500
+              "
+            >
+              <WppLogo className="px-3 h-12 w-16"/>
+              <p className="self-center font-semibold">
+                +54 9 351 2016383
+              </p>
+            </a>
           </div>
         </div>
       </div>

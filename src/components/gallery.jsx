@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import BookCover from './bookCover';
 import AddBookModal from './addBookModal';
 import TokenContext from "../TokenContext";
-import { GalleryFilter, GalleryButton } from './galleryFilter';
+import { GalleryButton } from './galleryFilter';
 import { ReactComponent as PlusLogo } from '../icons/plus.svg';
 import { ReactComponent as TrashLogo } from '../icons/trash.svg';
 import { ReactComponent as CrossLogo } from '../icons/cross.svg';
@@ -58,12 +58,7 @@ function Gallery() {
       >
         Books
       </h1>
-      <div className="flex justify-between pb-1">
-        <div className="flex flex-wrap">
-          <GalleryFilter label="Retratos" />
-          <GalleryFilter label="Estructuras" />
-          <GalleryFilter label="Variadas" />
-        </div>
+      <div className="flex justify-end pb-1">
         {token.token ? <div className="flex flex-wrap">
           <GalleryButton
             label={<PlusLogo className="w-6 h-6" />}
@@ -77,7 +72,7 @@ function Gallery() {
                 />
               <GalleryButton
                 label={<CrossLogo className="w-6 h-6" />}
-                func={() => { setDeleteMode(false) }}
+                func={() => { setDeleteMode(false); setDeletedBooks([]); }}
                 />
             </div>
           :

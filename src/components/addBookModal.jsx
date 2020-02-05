@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 
 import { ReactComponent as IconCross } from '../icons/cross.svg';
 import { ReactComponent as IconPlus } from '../icons/plus.svg';
@@ -7,7 +8,10 @@ import { ReactComponent as IconCaretDown } from '../icons/caret-down.svg';
 import { ReactComponent as IconBook } from '../icons/book.svg';
 import api from '../Api';
 
-function AddBookModal({ showModal, disabled, setBooks, books, buttonClasses }) {
+function AddBookModal(
+  { id, images, modelName, showModal, disabled,
+    setBooks, books, buttonClasses }
+) {
   const baseInputClasses = `
     appearance-none
     text-gray-700 border-gray-200
@@ -23,9 +27,15 @@ function AddBookModal({ showModal, disabled, setBooks, books, buttonClasses }) {
     focus:border-gray-500
   `;
 
+  let history = useHistory();
   const [urls, setUrls] = useState([""]);
   const [name, setName] = useState();
   const [tag, setTag] = useState("portrait");
+
+  useEffect(() => {
+    if (images) setUrls(images);
+    if (modelName) setName(modelName);
+  }, [images, modelName])
 
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {
@@ -49,13 +59,34 @@ function AddBookModal({ showModal, disabled, setBooks, books, buttonClasses }) {
     const photos = urls.map(url => {return {"url": url}});
     api.books.add({name, tag, photos}).then(res => {
       showModal({ disabled: true });
-      setUrls([""])
+      setUrls([""]);
       setName("");
       setTag("portrait");
       setBooks([books, res.data].flat())
-    }).catch(
-      res => console.log(res)
-    );
+    }).catch(err => {
+      if (err.response.status === 422 || err.response.status === 401) {
+        history.push('/login')
+      } else {
+        console.log(err)
+      }
+    });
+  }
+
+  const handleUpdate = () => {
+    const photos = urls.map(url => {return {"url": url}});
+    api.books.put(id, {name, tag, photos}).then(res => {
+      showModal({ disabled: true });
+      setUrls([""]);
+      setName("");
+      setTag("portrait");
+      setBooks([books, res.data].flat())
+    }).catch(err => {
+      if (err.response.status === 422 || err.response.status === 401) {
+        history.push('/login')
+      } else {
+        console.log(err)
+      }
+    });
   }
 
   return (
@@ -231,9 +262,9 @@ function AddBookModal({ showModal, disabled, setBooks, books, buttonClasses }) {
               focus:outline-none
               active:bg-indigo-500
             "
-            onClick={handleSubmit}
+            onClick={images ? handleUpdate : handleSubmit}
           >
-            Agregar
+            Aceptar
           </button>
         </div>
 

@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 
-import DropdownMenu from './dropdownMenu';
 import { ReactComponent as InstaLogo } from '../icons/instagram.svg';
+import { ReactComponent as WppLogo } from '../icons/whatsapp.svg';
+import { ReactComponent as ImagesLogo } from '../icons/images.svg';
+import { ReactComponent as LogoutLogo } from '../icons/logout.svg';
+import TokenContext from "../TokenContext";
 
 function Navbar() {
+  const { token, tokenDispatch } = useContext(TokenContext);
+
+  const logout = () =>  {
+    tokenDispatch({ type:"LOGOUT" });
+  };
+
   return (
     <div
       className="
@@ -30,7 +39,22 @@ function Navbar() {
         <a className="self-center" href="https://www.instagram.com/matuteph/">
           <InstaLogo className="px-3 h-6 w-12"/>
         </a>
-        <DropdownMenu />
+        <a className="self-center" href="https://www.instagram.com/matuteph/">
+          <WppLogo className="px-3 h-6 w-12"/>
+        </a>
+        <Link
+          to="/gallery"
+          className="self-center"
+        >
+          <ImagesLogo className="px-3 h-6 w-12"/>
+        </Link>
+        {token.token ?
+          <button
+            onClick={() => logout()}
+            className="self-center"
+          >
+            <LogoutLogo className="px-3 h-6 w-12"/>
+          </button> : ""}
       </div>
     </div>
   );
