@@ -39,7 +39,7 @@ function Navbar() {
         <a className="self-center" href="https://www.instagram.com/matuteph/">
           <InstaLogo className="px-3 h-6 w-12"/>
         </a>
-        <a className="self-center" href="https://www.instagram.com/matuteph/">
+        <a className="self-center" href="https://api.whatsapp.com/send?phone=+5493512016383">
           <WppLogo className="px-3 h-6 w-12"/>
         </a>
         <Link
