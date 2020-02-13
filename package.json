@@ -10,7 +10,8 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "^3.3.0"
+    "react-scripts": "^3.3.0",
+    "tailwindcss": "^1.1.2"
   },
   "scripts": {
     "tailwind:css": "tailwind build src/css/tailwind.src.css -c tailwind.js -o src/css/tailwind.css",
@@ -35,7 +36,7 @@
     ]
   },
   "devDependencies": {
-    "tailwindcss": "^1.1.2"
+
   },
   "homepage": "https://mauroeparis.github.io/tutefront"
 }
