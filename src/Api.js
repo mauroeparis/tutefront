@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const URL = "http://127.0.0.1:5000";
+const URL = process.env.REACT_APP_API_URL;
 
 const API = axios.create({
   baseURL: URL,

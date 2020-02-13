@@ -62,10 +62,14 @@ function AddBookModal(
       setUrls([""]);
       setName("");
       setTag("portrait");
-      setBooks([books, res.data].flat())
+      if (setBooks) {setBooks([books, res.data].flat())}
     }).catch(err => {
-      if (err.response.status === 422 || err.response.status === 401) {
-        history.push('/login')
+      if (err.response) {
+        if (err.response.status === 422 || err.response.status === 401) {
+          history.push('/login')
+        } else {
+          console.log(err)
+        }
       } else {
         console.log(err)
       }
@@ -79,10 +83,14 @@ function AddBookModal(
       setUrls([""]);
       setName("");
       setTag("portrait");
-      setBooks([books, res.data].flat())
+      if (setBooks) {setBooks([books, res.data].flat())}
     }).catch(err => {
-      if (err.response.status === 422 || err.response.status === 401) {
-        history.push('/login')
+      if (err.response) {
+        if (err.response.status === 422 || err.response.status === 401) {
+          history.push('/login')
+        } else {
+          console.log(err)
+        }
       } else {
         console.log(err)
       }
