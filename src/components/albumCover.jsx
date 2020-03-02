@@ -23,7 +23,7 @@ function AlbumCover(props) {
           "
         >
           <img
-            src={props.imgUrl}
+            src={process.env.PUBLIC_URL + props.imgUrl}
             className="w-full shadow-base rounded-lg" alt="album cover"
           />
         </div>

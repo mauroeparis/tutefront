@@ -24,7 +24,7 @@ function About() {
         <div className="self-center pb-6">
           <img
             className="object-cover rounded-full shadow-md h-40 w-40"
-            src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/02430f6d-af4e-45d1-9a86-bd4dd91db1f7/416cb9dc-d5a4-4bfb-a9dc-d30938854c31_rwc_0x22x4015x5989x4096.jpg?h=a88666c59b26eafbfc33d277d5a5002d"
+            src={process.env.PUBLIC_URL + "/img/mateodiaz.png"}
             alt="Mateo"
           />
         </div>
