@@ -84,7 +84,7 @@ function Gallery() {
         </div> : ""}
 
       </div>
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap justify-center">
         {books.map((book) => {
           return (
             <div className="m-3" key={book.id}>
