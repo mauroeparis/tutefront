@@ -1,8 +1,16 @@
 import React from "react";
+import { motion } from "framer-motion"
 
 function About() {
+  const item = {
+    hidden: { y: 50, opacity: 0 },
+    visible: {
+      y: 0, opacity: 1
+    }
+  }
+
   return (
-    <div
+    <motion.div className="w-full p-2 self-center" variants={item}
       className="
         self-center
         bg-white
@@ -49,7 +57,7 @@ function About() {
           </p>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
