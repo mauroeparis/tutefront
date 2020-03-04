@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion"
 
 import { ReactComponent as ChatIcon } from '../icons/chat.svg';
 import { ReactComponent as InstaLogo } from '../icons/instagram.svg';
@@ -6,8 +7,15 @@ import { ReactComponent as WppLogo } from '../icons/whatsapp.svg';
 
 
 function About() {
+  const item = {
+    hidden: { y: 50, opacity: 0 },
+    visible: {
+      y: 0, opacity: 1
+    }
+  }
+
   return (
-    <div
+    <motion.div variants={item}
       className="
         self-center
         bg-white
@@ -102,7 +110,7 @@ function About() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

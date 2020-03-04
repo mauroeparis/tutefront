@@ -10,7 +10,7 @@ function About() {
   }
 
   return (
-    <motion.div className="w-full p-2 self-center" variants={item}
+    <motion.div variants={item}
       className="
         self-center
         bg-white
