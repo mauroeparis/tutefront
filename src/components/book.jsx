@@ -1,5 +1,6 @@
 import React, {useState, useEffect, useContext} from 'react';
 import { useParams } from "react-router-dom";
+import { Image, Transformation } from 'cloudinary-react';
 
 import { ReactComponent as PencilLogo } from '../icons/pencil.svg';
 import TokenContext from "../TokenContext";
@@ -19,8 +20,8 @@ function Book() {
 
   const [hidden, showAddBookModal] = useState(true);
   const { id } = useParams();
-  const [images, setImages] = useState([""])
-  const [modelName, setModelName] = useState()
+  const [images, setImages] = useState([""]);
+  const [modelName, setModelName] = useState();
   const { token } = useContext(TokenContext);
 
 
@@ -28,8 +29,8 @@ function Book() {
     api.books.get(id)
     .then(res => {
       const book = res.data;
-      setModelName(book.name)
-      const images = book.photos.map(photo => photo.url).filter(url => url)
+      setModelName(book.name);
+      const images = book.photos.map(photo => photo.url).filter(url => url);
       setImages(images);
     });
   }, [id]);
@@ -53,19 +54,28 @@ function Book() {
       <div className="flex flex-wrap self-center w-8/12 pb-24 justify-center">
         {images.map((src, key) => {
           return (
-            <img
+            <Image
               key={key}
               className="w-32 h-32 m-1 cursor-pointer object-cover rounded"
-              src={src}
+              cloudName="dlm0t8wgy"
+              publicId={src}
+              type="fetch"
               alt="photobook cover"
               onClick={
                 () => {
                   showModal({
-                    disabled:false, index:key
+                    disabled: false, index: key
                   })
                 }
               }
-            />
+            >
+              <Transformation
+                height={128}
+                width={128}
+                fetchFormat="auto"
+                crop="fill"
+              />
+            </Image>
           )
         })}
       </div>

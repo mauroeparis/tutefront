@@ -43,7 +43,7 @@ function Home(props) {
           variants={item}
         >
           {
-            <AlbumCover imgUrl={"/img/1.jpg"} />
+            <AlbumCover imgUrl={"matute/1_exirvc"} />
           }
         </div>
         <div
@@ -57,7 +57,7 @@ function Home(props) {
           variants={item}
         >
           {
-            <AlbumCover imgUrl={"/img/2.jpg"} />
+            <AlbumCover imgUrl={"matute/2_celkuo"} />
           }
         </div>
         <div
@@ -71,7 +71,7 @@ function Home(props) {
           variants={item}
         >
           {
-            <AlbumCover imgUrl={"/img/3.jpg"} />
+            <AlbumCover imgUrl={"matute/3_okzwfi"} />
           }
         </div>
 
@@ -92,7 +92,7 @@ function Home(props) {
 
         <div className="w-3/4 md:w-7/12 md:-mb-24 lg:w-9/12 lg:-mb-64">
           {
-            <AlbumCover imgUrl={"/img/4.jpg"} />
+            <AlbumCover imgUrl={"matute/4_tgt7va"} />
           }
         </div>
         <div
@@ -106,7 +106,7 @@ function Home(props) {
           variants={item}
         >
           {
-            <AlbumCover imgUrl={"/img/5.jpg"} />
+            <AlbumCover imgUrl={"matute/5_cv0ryd"} />
           }
         </div>
         <div

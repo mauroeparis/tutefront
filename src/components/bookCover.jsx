@@ -1,18 +1,39 @@
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
+import { Image, Transformation } from 'cloudinary-react';
 
 function BookCover({ src, name }) {
+  const ref = useRef(null);
+  const [dimentions, setDimentions] = useState({ width: 0, height: 0 })
+
+  useEffect(() => {
+    const width = ref.current ? ref.current.offsetWidth : 0;
+    const height = ref.current ? ref.current.offsetHeight : 0;
+    setDimentions({ width, height });
+  }, []);
+
   return (
     <div
+      ref={ref}
       className="
         flex flex-col overflow-visible
-        max-w-xs lg:max-w-64 cursor-pointer
+        h-64 w-64 cursor-pointer m-2
       "
     >
-      <img
-        src={src}
-        alt={`${name + " photobook cover"}`}
-        className="rounded-lg shadow-md h-64 w-64 object-cover"
-      />
+      <Image
+        className="rounded-lg"
+        cloudName="dlm0t8wgy"
+        publicId={src}
+        width={dimentions.width}
+        height={dimentions.height}
+        type="fetch"
+      >
+        <Transformation
+          height={dimentions.height}
+          width={dimentions.width}
+          fetchFormat="auto"
+          crop="fill"
+        />
+      </Image>
       <div
         className="
           flex
@@ -22,7 +43,7 @@ function BookCover({ src, name }) {
           overflow-visible
         "
       >
-        <span className="font-raleway text-gray-900">{name}</span>
+        <span className="font-raleway text-gray-900 py-3">{name}</span>
       </div>
     </div>
   );
