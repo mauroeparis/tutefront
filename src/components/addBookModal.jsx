@@ -4,7 +4,6 @@ import { useHistory } from "react-router-dom";
 import { ReactComponent as IconCross } from '../icons/cross.svg';
 import { ReactComponent as IconPlus } from '../icons/plus.svg';
 import { ReactComponent as IconLink } from '../icons/link.svg';
-import { ReactComponent as IconCaretDown } from '../icons/caret-down.svg';
 import { ReactComponent as IconBook } from '../icons/book.svg';
 import api from '../Api';
 
@@ -30,7 +29,6 @@ function AddBookModal(
   let history = useHistory();
   const [urls, setUrls] = useState([""]);
   const [name, setName] = useState();
-  const [tag, setTag] = useState("portrait");
 
   useEffect(() => {
     if (images) setUrls(images);
@@ -57,11 +55,10 @@ function AddBookModal(
 
   const handleSubmit = () => {
     const photos = urls.map(url => {return {"url": url}});
-    api.books.add({name, tag, photos}).then(res => {
+    api.books.add({name, photos}).then(res => {
       showModal({ disabled: true });
       setUrls([""]);
       setName("");
-      setTag("portrait");
       if (setBooks) {setBooks([books, res.data].flat())}
     }).catch(err => {
       if (err.response) {
@@ -78,11 +75,10 @@ function AddBookModal(
 
   const handleUpdate = () => {
     const photos = urls.map(url => {return {"url": url}});
-    api.books.put(id, {name, tag, photos}).then(res => {
+    api.books.put(id, {id, name, photos}).then(res => {
       showModal({ disabled: true });
       setUrls([""]);
       setName("");
-      setTag("portrait");
       if (setBooks) {setBooks([books, res.data].flat())}
     }).catch(err => {
       if (err.response) {
@@ -155,29 +151,6 @@ function AddBookModal(
             "
           >
             <IconBook className="w-5 h-5 fill-current"/>
-          </div>
-        </div>
-        <div className="relative w-full mt-3">
-          <select
-            className={`${baseInputClasses} w-full pr-12`}
-            type="text"
-            name="tag"
-            placeholder="Tipo"
-            defaultValue={tag}
-            onChange={(ev) => setTag(ev.target.value)}
-          >
-            <option value="portrait">Retrato</option>
-            <option value="architecture">Estructura</option>
-          </select>
-          <div
-            className="
-              pointer-events-none
-              absolute inset-y-0 right-0
-              flex items-center
-              px-4 text-gray-600
-            "
-          >
-            <IconCaretDown className="w-6 h-6 fill-current"/>
           </div>
         </div>
 

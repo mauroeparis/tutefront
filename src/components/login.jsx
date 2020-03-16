@@ -57,10 +57,10 @@ function Login(props) {
     api.auth.login({ email, password })
     .then(res => {
       setError(false)
+      console.log(res)
       tokenDispatch({
         type:"LOGIN",
-        token:res.data.access_token,
-        refreshToken: res.data.refresh_token,
+        token:res.data.token,
       });
       history.push("/gallery");
       window.location.reload();

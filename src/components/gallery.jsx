@@ -21,7 +21,7 @@ function Gallery() {
   useEffect(() => {
     api.books.all()
     .then(res => {
-      setBooks(res.data.objects);
+      setBooks(res.data);
     });
   }, []);
 

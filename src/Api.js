@@ -7,28 +7,28 @@ const API = axios.create({
   timeout: 10000,
   headers: {
     'content-type': 'application/json',
-    Authorization: `Bearer ${localStorage.token}`
+    Authorization: `Token ${localStorage.token}`
   }
 });
 
 const auth = {
-  login: (data) => API.post("/auth-token", data),
+  login: (data) => API.post("auth-token/", data),
 };
 
 const books = {
-  all: () => API.get("api/books"),
-  get: (id) => API.get(`api/books/${id}`),
-  add: (data) => API.post("api/books", data),
-  put: (id, data) => API.put(`api/books/put/${id}`, data),
+  all: () => API.get("books"),
+  get: (id) => API.get(`books/${id}`),
+  add: (data) => API.post("books", data),
+  put: (id, data) => API.put(`books/${id}`, data),
   delMul: (idList, token) => API.post(
-    "api/books/delete",
+    "books/delete",
     {books: idList},
   )
 };
 
 const photos = {
-  all: () => API.get("api/photos"),
-  add: (data) => API.post("api/photos", data)
+  all: () => API.get("photos"),
+  add: (data) => API.post("photos", data)
 }
 
 const endpoints = { auth, books, photos };
