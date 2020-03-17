@@ -72,9 +72,9 @@ function Book() {
               <Transformation
                 height={128}
                 width={128}
-                fetchFormat="auto"
                 crop="fill"
               />
+              <Transformation fetchFormat="auto" />
             </Image>
           )
         })}

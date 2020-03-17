@@ -39,7 +39,11 @@ function AlbumCover(props) {
             width={dimentions.width}
             height={dimentions.height}
           >
-            <Transformation width={dimentions.width} fetchFormat="auto" crop="scale" />
+            <Transformation
+              width={dimentions.width}
+              fetchFormat="auto"
+              crop="scale"
+            />
           </Image>
         </div>
       </div>

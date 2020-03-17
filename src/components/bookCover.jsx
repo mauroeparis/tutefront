@@ -30,10 +30,11 @@ function BookCover({ src, name }) {
         <Transformation
           height={dimentions.height}
           width={dimentions.width}
-          fetchFormat="auto"
           crop="fill"
         />
+        <Transformation fetchFormat="auto"/>
       </Image>
+
       <div
         className="
           flex
