@@ -6,8 +6,8 @@ function BookCover({ src, name }) {
   const [dimentions, setDimentions] = useState({ width: 0, height: 0 })
 
   useEffect(() => {
-    const width = ref.current ? ref.current.offsetWidth : 0;
-    const height = ref.current ? ref.current.offsetHeight : 0;
+    const width = ref.current ? ref.current.clientWidth + 100 * window.devicePixelRatio : 0;
+    const height = ref.current ? ref.current.clientHeight + 100 * window.devicePixelRatio : 0;
     setDimentions({ width, height });
   }, []);
 

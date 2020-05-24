@@ -70,8 +70,8 @@ function Book() {
               }
             >
               <Transformation
-                height={128}
-                width={128}
+                height={228}
+                width={228}
                 crop="fill"
               />
               <Transformation fetchFormat="auto" />
