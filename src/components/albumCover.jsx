@@ -13,9 +13,9 @@ function AlbumCover(props) {
   const [dimentions, setDimentions] = useState({width: 0, height: 0})
 
   useEffect(() => {
-    const width = ref.current ? ref.current.offsetWidth : 0;
-    const height = ref.current ? ref.current.offsetHeight : 0;
-    setDimentions({ width, height});    
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    setDimentions({ width, height});
   }, []);
 
   return (

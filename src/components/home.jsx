@@ -71,7 +71,7 @@ function Home(props) {
           variants={item}
         >
           {
-            <AlbumCover imgUrl={"matute/3_okzwfi"} />
+            <AlbumCover imgUrl={"matute/3_ifuiit"} />
           }
         </div>
 
@@ -106,7 +106,7 @@ function Home(props) {
           variants={item}
         >
           {
-            <AlbumCover imgUrl={"matute/5_cv0ryd"} />
+            <AlbumCover imgUrl={"matute/5_j8merg"} />
           }
         </div>
         <div

@@ -32,7 +32,7 @@ function About() {
         <div className="self-center pb-6">
           <img
             className="object-cover rounded-full shadow-md h-40 w-40"
-            src={process.env.PUBLIC_URL + "/img/mateodiaz.png"}
+            src={process.env.PUBLIC_URL + "/img/mateodiaz.jpg"}
             alt="Mateo"
           />
         </div>
